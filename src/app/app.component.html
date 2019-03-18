@@ -2,11 +2,16 @@
   <h1>
     Bienvenue sur l'appli {{ titre }}!
   </h1>
+  <h2>Sous-titre général</h2>
 </div>
+<p [textContent]="uneVariable"></p>
 <p innerHTML="Le nombre de clics est {{ nombreClics() }}"></p>
 <button (click)="onClickButton()">Cliquez-moi</button><br/>
 <button (click)="resetCompteur()">RAZ</button>
-<app-hello></app-hello>
+
+<!-- Un sous-composant avec un titre modifié -->
+<app-hello [titreComposant]="uneVariable"></app-hello>
+<!-- Trois sous-composants avec un titre par défaut -->
 <app-hello></app-hello>
 <app-hello></app-hello>
 <app-hello></app-hello>

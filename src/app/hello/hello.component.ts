@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HelloComponent {
   nbClicks: number = 0;
+
+  @Input() titreComposant: string = "Mon titre par défaut";
 
   public onClickButton() {
     this.nbClicks++;

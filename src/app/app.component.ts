@@ -9,6 +9,8 @@ export class AppComponent {
   public titre : string = 'lucien';
   private nbClicks : number = 0;
 
+  public uneVariable = "Le contenu de mon paragraphe";
+
   public titreMajuscule(): string {
     return this.titre.toUpperCase();
   }
