@@ -7,13 +7,18 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class HelloComponent {
   nbClicks: number = 0;
+  maxLocal: number;
 
   @Input() titreComposant: string = "Mon titre par défaut";
   @Output() maxAtteint = new EventEmitter();
 
+  constructor() {
+    this.maxLocal = Math.floor(Math.random() * 10) + 1;
+  }
+
   public onClickButton() {
-    if (this.nbClicks === 10) {
-      this.maxAtteint.emit();
+    if (this.nbClicks === this.maxLocal) {
+      this.maxAtteint.emit(this.maxLocal);
     } else {
       this.nbClicks++;
     }

@@ -10,6 +10,6 @@
 <app-hello 
   *ngFor="let item of titres" 
   [titreComposant]="item" 
-  (maxAtteint)="onMaxAtteint(item)">
+  (maxAtteint)="onMaxAtteint(item, $event)">
 </app-hello>
 

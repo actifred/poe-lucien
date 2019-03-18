@@ -33,7 +33,7 @@ export class AppComponent {
     this.nbClicks = 0;
   }
 
-  public onMaxAtteint(nouveauNom: string) {
-    this.titre = nouveauNom;
+  public onMaxAtteint(nouveauNom: string, lenouveauMax: number) {
+    this.titre = nouveauNom + " avec le max " + lenouveauMax;
   }
 }
