@@ -9,6 +9,12 @@ export class AppComponent {
   public titre : string = 'lucien';
   private nbClicks : number = 0;
 
+  public titres: string[];
+
+  constructor() {
+    this.titres = ['Riri', 'Fifi', 'Loulou'];
+  }
+
   public uneVariable = "Le contenu de mon paragraphe";
 
   public titreMajuscule(): string {
@@ -16,7 +22,7 @@ export class AppComponent {
   }
 
   public onClickButton() {
-    this.nbClicks++;
+    this.titres.push('Donald');
   }
 
   public nombreClics(): number {
@@ -27,7 +33,7 @@ export class AppComponent {
     this.nbClicks = 0;
   }
 
-  public onMaxAtteint() {
-    this.titre = 'José';
+  public onMaxAtteint(nouveauNom: string) {
+    this.titre = nouveauNom;
   }
 }

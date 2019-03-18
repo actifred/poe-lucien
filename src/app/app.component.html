@@ -5,13 +5,11 @@
   <h2>Sous-titre général</h2>
 </div>
 <p [textContent]="uneVariable"></p>
-<p innerHTML="Le nombre de clics est {{ nombreClics() }}"></p>
 <button (click)="onClickButton()">Cliquez-moi</button><br/>
-<button (click)="resetCompteur()">RAZ</button>
 
-<!-- Un sous-composant avec un titre modifié -->
-<app-hello [titreComposant]="uneVariable"></app-hello>
-<!-- Trois sous-composants avec un titre par défaut -->
-<app-hello (maxAtteint)="onMaxAtteint()"></app-hello>
-<app-hello></app-hello>
-<app-hello></app-hello>
+<app-hello 
+  *ngFor="let item of titres" 
+  [titreComposant]="item" 
+  (maxAtteint)="onMaxAtteint(item)">
+</app-hello>
+
