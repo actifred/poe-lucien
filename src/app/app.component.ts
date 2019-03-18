@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'lucien';
+  public titre : string = 'lucien';
+  private nbClicks : number = 0;
+
+  public titreMajuscule(): string {
+    return this.titre.toUpperCase();
+  }
+
+  public onClickButton() {
+    this.nbClicks++;
+  }
+
+  public nombreClics(): number {
+    return this.nbClicks;
+  }
+
+  public resetCompteur() {
+    this.nbClicks = 0;
+  }
 }
