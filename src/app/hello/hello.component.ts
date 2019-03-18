@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -9,9 +9,14 @@ export class HelloComponent {
   nbClicks: number = 0;
 
   @Input() titreComposant: string = "Mon titre par défaut";
+  @Output() maxAtteint = new EventEmitter();
 
   public onClickButton() {
-    this.nbClicks++;
+    if (this.nbClicks === 10) {
+      this.maxAtteint.emit();
+    } else {
+      this.nbClicks++;
+    }
   }
 
   public nombreClics(): number {

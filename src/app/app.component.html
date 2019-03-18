@@ -12,6 +12,6 @@
 <!-- Un sous-composant avec un titre modifié -->
 <app-hello [titreComposant]="uneVariable"></app-hello>
 <!-- Trois sous-composants avec un titre par défaut -->
-<app-hello></app-hello>
+<app-hello (maxAtteint)="onMaxAtteint()"></app-hello>
 <app-hello></app-hello>
 <app-hello></app-hello>

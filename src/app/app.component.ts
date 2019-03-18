@@ -26,4 +26,8 @@ export class AppComponent {
   public resetCompteur() {
     this.nbClicks = 0;
   }
+
+  public onMaxAtteint() {
+    this.titre = 'José';
+  }
 }
