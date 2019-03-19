@@ -7,9 +7,17 @@
 <p [textContent]="uneVariable"></p>
 <button (click)="onClickButton()">Cliquez-moi</button><br/>
 
+<app-summary 
+  *ngIf="isGameOver" 
+  [nomGagnant]="leGagnant" 
+  [scoreGagnant]="leScore"
+  ></app-summary>
+
+<div *ngIf="!isGameOver">
 <app-hello 
   *ngFor="let item of titres" 
   [titreComposant]="item" 
   (maxAtteint)="onMaxAtteint(item, $event)">
 </app-hello>
+</div>
 

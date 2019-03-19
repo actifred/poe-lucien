@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public titre : string = 'lucien';
   private nbClicks : number = 0;
+  public isGameOver:boolean = false;
+  public leGagnant:string;
+  public leScore:number;
 
   public titres: string[];
 
@@ -35,5 +38,8 @@ export class AppComponent {
 
   public onMaxAtteint(nouveauNom: string, lenouveauMax: number) {
     this.titre = nouveauNom + " avec le max " + lenouveauMax;
+    this.isGameOver = true;
+    this.leGagnant = nouveauNom;
+    this.leScore = lenouveauMax;
   }
 }
