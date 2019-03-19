@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserManagerService } from './user-manager.service';
+import { User } from './models/user';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +16,12 @@ export class AppComponent {
 
   public titres: string[];
 
-  constructor() {
+  public users: User[];
+
+  constructor(private _userManager: UserManagerService) {
     this.titres = ['Riri', 'Fifi', 'Loulou'];
+
+    this.users = this._userManager.getList();
   }
 
   public uneVariable = "Le contenu de mon paragraphe";
@@ -41,5 +47,9 @@ export class AppComponent {
     this.isGameOver = true;
     this.leGagnant = nouveauNom;
     this.leScore = lenouveauMax;
+  }
+
+  public onAddUser() {
+    this._userManager.addUser();
   }
 }

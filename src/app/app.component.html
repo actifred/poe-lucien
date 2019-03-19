@@ -5,7 +5,12 @@
   <h2>Sous-titre général</h2>
 </div>
 <p [textContent]="uneVariable"></p>
-<button (click)="onClickButton()">Cliquez-moi</button><br/>
+
+<app-user-card *ngFor="let user of users" [currentUser]="user"></app-user-card>
+
+<app-user-editor></app-user-editor>
+
+<hr>
 
 <app-summary 
   *ngIf="isGameOver" 
